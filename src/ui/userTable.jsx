@@ -71,7 +71,8 @@ function UserTable(){
     }
     async function putBlocked(){
             console.log(`selected rowes`, selectedRows)
-            axios.put(`https://testserver-o5a7.onrender.com/admin/block`, {selectedRows}, {
+            const data = { selectedRows };
+            axios.put(`https://testserver-o5a7.onrender.com/admin/block`, data, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}`
