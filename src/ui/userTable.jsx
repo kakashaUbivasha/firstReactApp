@@ -73,7 +73,8 @@ function UserTable(){
             console.log(`selected rowes`, selectedRows)
             axios.put(`https://testserver-o5a7.onrender.com/admin/block`, {selectedRows}, {
                 headers: {
-                    Authorization: `Bearer ${token}`
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
                 }
             })
                 .then(r=>{
