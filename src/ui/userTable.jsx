@@ -69,8 +69,8 @@ function UserTable(){
             navigateTo('/autorization')
         }
     }
-    const handleBlocked = () =>{
-        
+    async function putBlocked(){
+
             axios.put(`https://testserver-o5a7.onrender.com/admin/block`, {selectedRows}, {
                 headers: {
                     Authorization: `Bearer ${token}`
@@ -78,15 +78,22 @@ function UserTable(){
             })
                 .then(r=>{
                     handleAdminRequest()
-                    })
+                })
                 .catch(e=>{
                     statusChecked(e)
                 })
-        
-        if (selectedRows.includes(currentUser.id)){
-            localStorage.removeItem('token')
-            navigateTo('/autorization')
-        }
+
+    }
+    const handleBlocked = () =>{
+
+        putBlocked()
+            .then(()=>{
+                if (selectedRows.includes(currentUser.id)){
+                    localStorage.removeItem('token')
+                    navigateTo('/autorization')
+                }
+            })
+            .catch(e=>console.error(e))
         setSelectedRows([])
         setSelectAll(false)
     }
