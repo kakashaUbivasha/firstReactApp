@@ -82,6 +82,7 @@ function UserTable(){
                     handleAdminRequest()
                 })
                 .catch(e=>{
+                    console.error(e)
                     statusChecked(e)
                 })
                 if (selectedRows.includes(currentUser.id)){
