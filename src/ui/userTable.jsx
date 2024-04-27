@@ -70,7 +70,7 @@ function UserTable(){
         }
     }
     const handleBlocked = () =>{
-        selectedRows.forEach(id=>{
+        
             axios.put(`https://testserver-o5a7.onrender.com/admin/block`, {selectedRows}, {
                 headers: {
                     Authorization: `Bearer ${token}`
@@ -82,7 +82,7 @@ function UserTable(){
                 .catch(e=>{
                     statusChecked(e)
                 })
-        })
+        
         if (selectedRows.includes(currentUser.id)){
             localStorage.removeItem('token')
             navigateTo('/autorization')
