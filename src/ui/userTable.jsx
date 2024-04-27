@@ -79,6 +79,7 @@ function UserTable(){
                 }
             })
                 .then(r=>{
+                    console.log(r)
                     handleAdminRequest()
                 })
                 .catch(e=>{
