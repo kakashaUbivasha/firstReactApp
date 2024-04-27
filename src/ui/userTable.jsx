@@ -71,7 +71,7 @@ function UserTable(){
     }
     const handleBlocked = () =>{
         selectedRows.forEach(id=>{
-            axios.put(`https://testserver-o5a7.onrender.com/admin/block/:${id}`, {}, {
+            axios.put(`https://testserver-o5a7.onrender.com/admin/block`, {selectedRows}, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
