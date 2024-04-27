@@ -70,7 +70,7 @@ function UserTable(){
         }
     }
     async function putBlocked(){
-
+            console.log(`selected rowes`, selectedRows)
             axios.put(`https://testserver-o5a7.onrender.com/admin/block`, {selectedRows}, {
                 headers: {
                     Authorization: `Bearer ${token}`
