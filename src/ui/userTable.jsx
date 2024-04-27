@@ -69,8 +69,8 @@ function UserTable(){
             navigateTo('/autorization')
         }
     }
-    async function putBlocked(){
-            console.log(`selected rowes`, selectedRows)
+
+    const handleBlocked = () =>{
             const data = { selectedRows };
             axios.put(`https://testserver-o5a7.onrender.com/admin/block`, data, {
                 headers: {
@@ -84,18 +84,10 @@ function UserTable(){
                 .catch(e=>{
                     statusChecked(e)
                 })
-
-    }
-    const handleBlocked = () =>{
-
-        putBlocked()
-            .then(()=>{
                 if (selectedRows.includes(currentUser.id)){
                     localStorage.removeItem('token')
                     navigateTo('/autorization')
-                }
-            })
-            .catch(e=>console.error(e))
+                }   
         setSelectedRows([])
         setSelectAll(false)
     }
