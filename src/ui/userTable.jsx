@@ -10,7 +10,7 @@ function UserTable(){
     const navigateTo = useNavigate();
     const token = localStorage.getItem('token');
     const handleAdminRequest = () => {
-        axios.get(`http://localhost:3000/admin`,{
+        axios.get(`https://testserver-o5a7.onrender.com/admin`,{
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -23,7 +23,7 @@ function UserTable(){
     }
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/users/me`, {
+        axios.get(`https://testserver-o5a7.onrender.com/users/me`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -71,7 +71,7 @@ function UserTable(){
     }
     const handleBlocked = () =>{
         selectedRows.forEach(id=>{
-            axios.put(`http://localhost:3000/admin/block/:${id}`, {}, {
+            axios.put(`https://testserver-o5a7.onrender.com/admin/block/:${id}`, {}, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -92,7 +92,7 @@ function UserTable(){
     }
     const handleUnblocked = () =>{
         selectedRows.forEach(id=>{
-            axios.put(`http://localhost:3000/users/unblock/:${id}`, {}, {
+            axios.put(`https://testserver-o5a7.onrender.com/users/unblock/:${id}`, {}, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -109,7 +109,7 @@ function UserTable(){
     }
     const handleDelete = () =>{
         selectedRows.forEach(id=>{
-            axios.delete(`http://localhost:3000/users/:${id}`, {
+            axios.delete(`https://testserver-o5a7.onrender.com/users/:${id}`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }

@@ -22,7 +22,7 @@ function Autorization(){
             status: 'active'
         };
         console.log(userData);
-        axios.post('http://localhost:3000/login',userData)
+        axios.post('https://testserver-o5a7.onrender.com/login',userData)
             .then((response)=>{
                 console.log(response)
                 localStorage.setItem('token', response.data.token);

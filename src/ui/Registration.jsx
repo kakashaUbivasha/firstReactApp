@@ -13,7 +13,7 @@ function Registration(){
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:3000/users', {
+            const response = await axios.post('https://testserver-o5a7.onrender.com/users', {
                 email: email,
                 name: name,
                 password: password,
